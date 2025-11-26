@@ -4,8 +4,6 @@ author: definitely him
 description: sample1
 ---
 
-
-
 Vestibulum leo turpis, dignissim quis ultrices sit amet, iaculis ac ligula.
 Pellentesque tristique, velit eget scelerisque scelerisque, est dolor ultrices
 arcu, quis ullamcorper justo arcu luctus mauris. Integer congue molestie nisi id

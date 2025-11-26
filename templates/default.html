@@ -16,12 +16,15 @@
                 <a href="/">Home</a>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
+                <a href="/projects.html">projects</a>
                 <a href="/archive.html">Archive</a>
             </nav>
         </header>
 
         <main role="main">
             <h1>$title$</h1>
+            $if(author)$<meta name ="author" content="$author$">$endif$
+            $if(keywords)$<meta name="keywords" content="$keywords$">$endif$
             $body$
         </main>
 
