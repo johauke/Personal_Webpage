@@ -149,7 +149,7 @@ readingTimeField key =
   where
     calculate :: Item String -> Compiler String
     calculate = pure . withTagList acc . itemBody
-    acc ts = [TagText . show $ time ts]
+    acc ts = [TagText . show . max 1 $ time ts]
     -- M. Brysbaert, Journal of Memory and Language (2009) vol 109.
     -- DOI: 10.1016/j.jml.2019.104047
     time ts = foldr count 0 ts `div` 238
@@ -211,16 +211,16 @@ config =
         }
 
 root :: String
-root = "https://mypage.com"
+root = "https://internetcheckpoint.com"
 
 feedConfiguration :: FeedConfiguration
 feedConfiguration =
     FeedConfiguration
-        { feedTitle = "My Blog"
-        , feedDescription = "Posts about x, y & z"
-        , feedAuthorName = "Jonas"
+        { feedTitle = "My Internet Checkpoint"
+        , feedDescription = "Posts about my interrests and other things I have worked on."
+        , feedAuthorName = "Jonas Haukenes"
         , feedAuthorEmail = ""
-        , feedRoot = "https://example.com"
+        , feedRoot = "https://internetcheckpoint.com"
         }
 
 feedCtx :: Context String

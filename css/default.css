@@ -30,6 +30,7 @@
   --accent: #7cff6b; /* phosphor green */
   --accent-alt: #ffd479; /* amber highlight */
   --border-color: #2f2f2f;
+  --font-weight: normal;
 
   --max-width: 900px;
   --radius: 4px;
@@ -42,11 +43,12 @@
 [data-theme="light"] {
   --bg-color: #f4f1ea;
   --surface-color: #fffdf8;
-  --text-color: #1f2933;
+  --text-color: #050608;
   --muted-text: #5b6470;
   --accent: #1f7a3a;
   --accent-alt: #b45309;
   --border-color: #d1cfc7;
+  --font-weight: 550;
 }
 
 /* =========================
@@ -70,6 +72,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--font-body);
+  font-weight: var(--font-weight);
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.7;
@@ -158,7 +161,7 @@ footer {
 }
 
 .rhs {
-  flex-grow: 1;
+  margin-left: auto;
 }
 
 /* =========================
