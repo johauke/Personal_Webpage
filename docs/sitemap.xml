@@ -13,18 +13,4 @@
     <priority>1.0</priority>
   </url>
 
-  <url>
-    <loc>https://mypage.com/posts/v8-javascript-tutorial/index.html</loc>
-    <lastmod>January 17, 2025</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mypage.com/posts/spidermonkey-javascript-tutorial/index.html</loc>
-    <lastmod>January 17, 2025</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
 </urlset>

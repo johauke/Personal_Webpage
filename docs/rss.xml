@@ -7,23 +7,7 @@
         <description><![CDATA[Posts about x, y & z]]></description>
         <atom:link href="https://example.com/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Fri, 17 Jan 2025 00:00:00 UT</lastBuildDate>
-        <item>
-    <title>v8 JavaScript tutorial</title>
-    <link>https://mypage.com/posts/v8-javascript-tutorial/index.html</link>
-    <description><![CDATA[An introductory guide to implementing JavaScript language features in v8 and the ECMA process.]]></description>
-    <pubDate>Fri, 17 Jan 2025 00:00:00 UT</pubDate>
-    <guid>https://mypage.com/posts/v8-javascript-tutorial/index.html</guid>
-    <dc:creator>Jonas</dc:creator>
-</item>
-<item>
-    <title>SpiderMonkey JavaScript tutorial</title>
-    <link>https://mypage.com/posts/spidermonkey-javascript-tutorial/index.html</link>
-    <description><![CDATA[An introductory guide to implementing JavaScript language features in SpiderMonkey and the ECMA process.]]></description>
-    <pubDate>Fri, 17 Jan 2025 00:00:00 UT</pubDate>
-    <guid>https://mypage.com/posts/spidermonkey-javascript-tutorial/index.html</guid>
-    <dc:creator>Jonas</dc:creator>
-</item>
-
+        <lastBuildDate>Unknown</lastBuildDate>
+        
     </channel>
 </rss>
