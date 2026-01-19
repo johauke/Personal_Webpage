@@ -16,7 +16,7 @@ import Text.Pandoc.Options (HighlightMethod (Skylighting), WriterOptions (..))
 
 main :: IO ()
 main = hakyllWith config $ do
-    match ("images/*") $ do
+    match ("images/*" .||. "fonts/Fira_Sans/*") $ do
         route idRoute
         compile copyFileCompiler
 
@@ -30,7 +30,6 @@ main = hakyllWith config $ do
             makeItem $ styleToCss pandocCodeStyle
 
     match "personal/me.md" $ do
-        -- route $ setExtension "html"
         route $ customRoute $ const "about/index.html"
         compile $
             pandocCompiler

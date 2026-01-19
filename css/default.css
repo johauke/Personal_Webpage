@@ -18,6 +18,12 @@
   }
 }
 
+@font-face {
+  font-family: "Fira Sans";
+  src: url("../fonts/Fira_Sans/FiraSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
 /* =========================
    Retro Theme Variables
    ========================= */
@@ -35,7 +41,7 @@
   --max-width: 900px;
   --radius: 4px;
 
-  --font-body: "Courier New", Courier, monospace;
+  --font-body: "Fira Sans";
   --font-heading: "Courier New", Courier, monospace;
 }
 
@@ -48,7 +54,6 @@
   --accent: #1f7a3a;
   --accent-alt: #b45309;
   --border-color: #d1cfc7;
-  --font-weight: 550;
 }
 
 /* =========================
