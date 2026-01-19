@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WASM Compiler - Internet Checkpoint</title>
+    <link rel="stylesheet" href="../../css/default.css" />
+    <link rel="stylesheet" href="../../css/syntax.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../../">My Internet Checkpoint</a>
+      </div>
+
+      <nav>
+        <a href="../../projects/">Projects</a>
+        <a href="../../posts/">Blog</a>
+        <a href="../../about/">About Me</a>
+      </nav>
+    </header>
+
+    <main role="main">
+      <h1>WASM Compiler</h1>
+      
+      <meta name="author" content="Jonas Haukenes" />  <article>
+  <section class="header">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffd479">
+      <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"></path>
+    </svg>
+    January 17, 2025
+  </section>
+  <section class="time">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -1000 960 870" width="20px" fill="#ffd479">
+      <path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"></path>
+    </svg>
+    2 min read
+  </section>
+  <section class="info">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -1000 900 800" width="20px" fill="#ffd479">
+      <path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"></path>
+    </svg>
+     <a title="All pages tagged 'WASM'." href="../../tags/WASM/" rel="tag">WASM</a>, <a title="All pages tagged 'TypeScript'." href="../../tags/TypeScript/" rel="tag">TypeScript</a> 
+  </section>
+  <section><p>Mauris in lorem nisl. Maecenas tempus facilisis ante, eget viverra nisl
+tincidunt et. Donec turpis lectus, mattis ac malesuada a, accumsan eu libero.
+Morbi condimentum, tortor et tincidunt ullamcorper, sem quam pretium nulla, id
+convallis lectus libero nec turpis. Proin dapibus nisi id est sodales nec
+ultrices tortor pellentesque. Vivamus vel nisi ac lacus sollicitudin vulputate
+ac ut ligula. Nullam feugiat risus eget eros gravida in molestie sapien euismod.
+Nunc sed hendrerit orci. Nulla mollis consequat lorem ac blandit. Ut et turpis
+mauris. Nulla est odio, posuere id ullamcorper sit amet, tincidunt vel justo.
+Curabitur placerat tincidunt varius. Nulla vulputate, ipsum eu consectetur
+mollis, dui nibh aliquam neque, at ultricies leo ligula et arcu. Proin et mi
+eget tellus sodales lobortis. Sed tempor, urna vel pulvinar faucibus, lectus
+urna vehicula ante, at facilisis dolor odio at lorem. Morbi vehicula euismod
+urna, et imperdiet urna ornare vitae.</p>
+<p>Sed tincidunt sollicitudin ultrices. In hac habitasse platea dictumst. Morbi
+ligula lectus, egestas at ultricies nec, fringilla et tellus. Duis urna lorem,
+bibendum a ornare sed, euismod sed nunc. Aliquam tempor massa at velit fringilla
+fringilla. Praesent sit amet tempor felis. Maecenas id felis ac velit aliquam
+tempor a sit amet orci. Nunc placerat nulla pellentesque sem commodo cursus.
+Praesent quis sapien orci, quis ultricies augue. Nam vestibulum sem non augue
+semper tincidunt pellentesque ipsum volutpat. Duis congue, nunc a aliquam
+luctus, quam ante convallis nisi, ac pellentesque lacus orci vel turpis. Cum
+sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Suspendisse hendrerit nisl eu felis sagittis faucibus. Nunc eu congue
+lorem. Quisque non nibh nisi, et ultrices massa. Sed vitae erat vitae nulla
+pellentesque fermentum.</p>
+<p>Ut diam nunc, consectetur ut ultrices eu, iaculis sed felis. Sed lacinia, odio
+et accumsan luctus, arcu ipsum accumsan erat, sit amet malesuada libero lacus et
+velit. Donec accumsan tristique tristique. Proin a metus magna, vitae mattis
+nisl. Integer a libero ipsum. Mauris faucibus eleifend metus id sodales. Morbi
+ornare, nibh nec facilisis imperdiet, turpis sem commodo lorem, id commodo
+mauris metus vitae justo. Etiam at pellentesque tortor. Proin mollis accumsan
+ligula, nec tempus augue auctor quis. Nulla lacinia, mi quis lobortis auctor,
+nisi diam posuere dui, pulvinar feugiat dui libero eget quam. Fusce eu risus
+nunc, a consectetur orci. Class aptent taciti sociosqu ad litora torquent per
+conubia nostra, per inceptos himenaeos. Maecenas venenatis aliquet orci, a
+ultricies sem facilisis eu. Donec dolor purus, porta condimentum convallis nec,
+dignissim nec libero.</p>
+<p>Etiam rutrum ultricies dui, et interdum metus elementum et. Nulla sapien nunc,
+interdum tristique porttitor in, laoreet vitae mi. Ut vehicula auctor mauris sit
+amet bibendum. Phasellus adipiscing mattis libero, eget adipiscing erat
+dignissim at. Vivamus convallis malesuada metus nec cursus. Ut cursus, lorem
+eleifend sollicitudin condimentum, felis tortor sodales augue, ac tempus lacus
+ipsum vitae quam. Vestibulum vitae lacus non tortor vehicula iaculis faucibus
+quis massa.</p>
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Duis malesuada neque nec ante porttitor accumsan. Suspendisse potenti.
+Aliquam in lacus magna, imperdiet laoreet lectus. Praesent id diam nec ante
+commodo rhoncus nec vel augue. Pellentesque tortor massa, dignissim ut sagittis
+sed, hendrerit vitae nunc. Nam gravida, urna vitae hendrerit rutrum, felis augue
+vulputate tortor, ut varius velit libero nec lectus. In adipiscing massa in est
+scelerisque ullamcorper. Vivamus in nisi metus.</p></section>
+</article>
+
+    </main>
+
+    <footer>
+        <div class="lhs">
+            λ Generated by <a href="http://jaspervdj.be/hakyll">Hakyll</a></br>
+            © 2026 Jonas Haukenes
+        </div>
+        <div class="rhs">
+            <button id="theme-toggle" aria-label="Toggle theme">
+            <span class="toggle-label">LIGHT</span>
+            <span class="toggle-track">
+                <span class="toggle-knob"></span>
+            </span>
+            <span class="toggle-label">DARK</span>
+            </button>
+        </div>
+    </footer>
+  </body>
+<script>
+  (function () {
+    const root = document.documentElement;
+    const toggle = document.getElementById("theme-toggle");
+
+    // Load saved theme or system preference
+    const saved = localStorage.getItem("theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (saved) {
+      root.setAttribute("data-theme", saved);
+    } else {
+      root.setAttribute("data-theme", systemDark ? "dark" : "light");
+    }
+
+    // Toggle handler
+    toggle.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  })();
+</script>
+
+</html>

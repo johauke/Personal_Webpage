@@ -1,141 +1,353 @@
+/* =========================
+   System Theme Detection
+   ========================= */
+
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme]) {
+    data-theme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    data-theme: dark;
+  }
+}
+
+/* =========================
+   Retro Theme Variables
+   ========================= */
+
+:root {
+  --bg-color: #1b1b1b; /* CRT black */
+  --surface-color: #111111;
+  --text-color: #e2e2c6; /* warm terminal text */
+  --muted-text: #9fa38a;
+  --accent: #7cff6b; /* phosphor green */
+  --accent-alt: #ffd479; /* amber highlight */
+  --border-color: #2f2f2f;
+
+  --max-width: 900px;
+  --radius: 4px;
+
+  --font-body: "Courier New", Courier, monospace;
+  --font-heading: "Courier New", Courier, monospace;
+}
+
+/* Light */
+[data-theme="light"] {
+  --bg-color: #f4f1ea;
+  --surface-color: #fffdf8;
+  --text-color: #1f2933;
+  --muted-text: #5b6470;
+  --accent: #1f7a3a;
+  --accent-alt: #b45309;
+  --border-color: #d1cfc7;
+}
+
+/* =========================
+   Global Reset
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
-  font-size: 62.5%;
+  height: 100%;
+  font-size: 16px;
 }
 
 body {
-  font-size: 1.6rem;
-  color: #000;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  text-shadow: 0 0 1px rgba(124, 255, 107, 0.25);
 }
+
+/* =========================
+   CRT Scanline Effect
+   ========================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 100;
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
 
 header {
-  border-bottom: 0.2rem solid #000;
-}
-
-nav {
-  text-align: right;
-}
-
-nav a {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-footer {
-  margin-top: 3rem;
-  padding: 1.2rem 0;
-  border-top: 0.2rem solid #000;
-  font-size: 1.2rem;
-  color: #555;
-}
-
-h1 {
-  font-size: 2.4rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-article .header {
-  font-size: 1.4rem;
-  font-style: italic;
-  color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--surface-color);
 }
 
 .logo a {
+  font-size: 1.1rem;
   font-weight: bold;
-  color: #000;
+  color: var(--accent);
   text-decoration: none;
 }
 
-@media (max-width: 319px) {
-  body {
-    width: 90%;
-    margin: 0;
-    padding: 0 5%;
+.logo a::before {
+  content: "> ";
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--muted-text);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--accent-alt);
+  text-decoration: underline;
+}
+
+/* =========================
+   Footer Blinking Cursor
+   ========================= */
+
+footer {
+  margin-top: 4rem;
+  padding: 1.5rem 2rem;
+  border-top: 2px solid var(--border-color);
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  display: flex;
+}
+
+.lhs {
+  width: 1000px;
+}
+
+.lhs:after {
+  content: " █";
+  color: var(--accent);
+  animation: blink 1s steps(1) infinite;
+}
+
+.rhs {
+  flex-grow: 1;
+}
+
+/* =========================
+   Blinking Cursor Animation
+   ========================= */
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
   }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =========================
+   Main Layout
+   ========================= */
+
+main {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+summary.h1,
+h1 {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+h1::before {
+  content: "$ ";
+}
+
+summary.h2,
+h2 {
+  font-size: 1.4rem;
+  color: var(--accent-alt);
+}
+h2::before {
+  content: "## ";
+}
+
+p {
+  margin: 1rem 0;
+}
+
+summary.h1 {
+  font-weight: bold;
+}
+
+summary.h2 {
+  font-weight: bold;
+}
+
+/* =========================
+   Links
+   ========================= */
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-alt);
+}
+
+/* =========================
+   Lists
+   ========================= */
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0 2rem;
+}
+
+li {
+  margin: 0.6rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+li::before {
+  content: "*";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* =========================
+   Images
+   ========================= */
+
+main img {
+  border: 2px solid var(--border-color);
+  padding: 4px;
+  background-color: #000;
+  image-rendering: pixelated;
+}
+
+@media (max-width: 700px) {
   header {
-    margin: 4.2rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
+
   nav {
-    margin: 0 auto 3rem;
-    text-align: center;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
-  footer {
-    text-align: center;
-  }
-  .logo {
-    text-align: center;
-    margin: 1rem auto 3rem;
-  }
-  .logo a {
-    font-size: 2.4rem;
-  }
-  nav a {
+
+  main img {
+    float: none !important;
     display: block;
-    line-height: 1.6;
+    margin: 1rem auto;
+    max-width: 100%;
   }
 }
 
-@media (min-width: 320px) {
-  body {
-    width: 90%;
-    margin: 0;
-    padding: 0 5%;
-  }
-  header {
-    margin: 4.2rem 0;
-  }
-  nav {
-    margin: 0 auto 3rem;
-    text-align: center;
-  }
-  footer {
-    text-align: center;
-  }
-  .logo {
-    text-align: center;
-    margin: 1rem auto 3rem;
-  }
-  .logo a {
-    font-size: 2.4rem;
-  }
-  nav a {
-    display: inline;
-    margin: 0 0.6rem;
-  }
+/* =========================
+   Theme Toggle (Hardware Style)
+   ========================= */
+
+#theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  color: var(--muted-text);
+  cursor: pointer;
 }
 
-@media (min-width: 640px) {
-  body {
-    width: 60rem;
-    margin: 0 auto;
-    padding: 0;
-  }
-  header {
-    margin: 0 0 3rem;
-    padding: 1.2rem 0;
-  }
-  nav {
-    margin: 0;
-    text-align: right;
-  }
-  nav a {
-    margin: 0 0 0 1.2rem;
-    display: inline;
-  }
-  footer {
-    text-align: right;
-  }
-  .logo {
-    margin: 0;
-    text-align: left;
-  }
-  .logo a {
-    float: left;
-    font-size: 1.8rem;
-  }
+.toggle-label {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.toggle-track {
+  width: 42px;
+  height: 20px;
+  background-color: var(--border-color);
+  border: 2px solid var(--border-color);
+  position: relative;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.toggle-knob {
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.2s steps(2);
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.4),
+    1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* DARK MODE POSITION */
+[data-theme="dark"] .toggle-knob {
+  transform: translateX(20px);
+}
+
+/* ACTIVE LABEL */
+[data-theme="light"] .toggle-label:first-child,
+[data-theme="dark"] .toggle-label:last-child {
+  opacity: 1;
+  color: var(--accent);
 }

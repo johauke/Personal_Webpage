@@ -7,37 +7,21 @@
         <description><![CDATA[Posts about x, y & z]]></description>
         <atom:link href="https://example.com/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 07 Dec 2015 00:00:00 UT</lastBuildDate>
+        <lastBuildDate>Fri, 17 Jan 2025 00:00:00 UT</lastBuildDate>
         <item>
-    <title>not this</title>
-    <link>https://mypage.com/not-this.html</link>
-    <description><![CDATA[sample1]]></description>
-    <pubDate>Mon, 07 Dec 2015 00:00:00 UT</pubDate>
-    <guid>https://mypage.com/not-this.html</guid>
+    <title>v8 JavaScript tutorial</title>
+    <link>https://mypage.com/posts/v8-javascript-tutorial/index.html</link>
+    <description><![CDATA[An introductory guide to implementing JavaScript language features in v8 and the ECMA process.]]></description>
+    <pubDate>Fri, 17 Jan 2025 00:00:00 UT</pubDate>
+    <guid>https://mypage.com/posts/v8-javascript-tutorial/index.html</guid>
     <dc:creator>Jonas</dc:creator>
 </item>
 <item>
-    <title>Carpe Diem</title>
-    <link>https://mypage.com/carpe-diem.html</link>
-    <description><![CDATA[sample4]]></description>
-    <pubDate>Sat, 28 Nov 2015 00:00:00 UT</pubDate>
-    <guid>https://mypage.com/carpe-diem.html</guid>
-    <dc:creator>Jonas</dc:creator>
-</item>
-<item>
-    <title>Rosa Rosa Rosam</title>
-    <link>https://mypage.com/rosa-rosa-rosam.html</link>
-    <description><![CDATA[sample3]]></description>
-    <pubDate>Wed, 07 Oct 2015 00:00:00 UT</pubDate>
-    <guid>https://mypage.com/rosa-rosa-rosam.html</guid>
-    <dc:creator>Jonas</dc:creator>
-</item>
-<item>
-    <title>S.P.Q.R.</title>
-    <link>https://mypage.com/s-p-q-r.html</link>
-    <description><![CDATA[sample2]]></description>
-    <pubDate>Wed, 12 Aug 2015 00:00:00 UT</pubDate>
-    <guid>https://mypage.com/s-p-q-r.html</guid>
+    <title>SpiderMonkey JavaScript tutorial</title>
+    <link>https://mypage.com/posts/spidermonkey-javascript-tutorial/index.html</link>
+    <description><![CDATA[An introductory guide to implementing JavaScript language features in SpiderMonkey and the ECMA process.]]></description>
+    <pubDate>Fri, 17 Jan 2025 00:00:00 UT</pubDate>
+    <guid>https://mypage.com/posts/spidermonkey-javascript-tutorial/index.html</guid>
     <dc:creator>Jonas</dc:creator>
 </item>
 

@@ -14,43 +14,15 @@
   </url>
 
   <url>
-    <loc>https://mypage.com/not-this.html</loc>
-    <lastmod>December  7, 2015</lastmod>
+    <loc>https://mypage.com/posts/v8-javascript-tutorial/index.html</loc>
+    <lastmod>January 17, 2025</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://mypage.com/carpe-diem.html</loc>
-    <lastmod>November 28, 2015</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mypage.com/rosa-rosa-rosam.html</loc>
-    <lastmod>October  7, 2015</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mypage.com/s-p-q-r.html</loc>
-    <lastmod>August 12, 2015</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mypage.com/about.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mypage.com/contact.html</loc>
-    <lastmod></lastmod>
+    <loc>https://mypage.com/posts/spidermonkey-javascript-tutorial/index.html</loc>
+    <lastmod>January 17, 2025</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

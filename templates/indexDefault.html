@@ -5,49 +5,25 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Internet Checkpoint</title>
-    <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="/css/default.css" />
   </head>
 
   <body>
     <header>
       <div class="logo">
-        <a href="./">My Internet Checkpoint</a>
+        <a href="/">My Internet Checkpoint</a>
       </div>
       <nav>
-        <a href="./projects/">Projects</a>
-        <a href="./posts/">Posts</a>
-        <a href="./about/">About Me</a>
+        <a href="/projects/">Projects</a>
+        <a href="/posts/">Posts</a>
+        <a href="/about/">About Me</a>
       </nav>
     </header>
 
     <main role="main">
-        <!-- <img src="/images/haskell-logo.png" style="float: right; margin: 100px" /> -->
-
-<h1>Jonas Haukenes</h1>
-<p>// M.Sc. in Informatics - Algorithms.</p>
-
-<h2>Recent posts</h2>
-<ul>
-    
-    <li>
-        <a href="./posts/v8-javascript-tutorial/">v8 JavaScript tutorial</a> - January 17, 2025
-    </li>
-    
-    <li>
-        <a href="./posts/spidermonkey-javascript-tutorial/">SpiderMonkey JavaScript tutorial</a> - January 17, 2025
-    </li>
-    
-</ul>
-
-
-<h2>Projects</h2>
-<ul>
-  
-  <li><a href="./projects/wasm-compiler/">WASM Compiler</a> - January 17, 2025</li>
-  
-</ul>
-
-
+      $if(author)$
+      <meta name="author" content="$author$" />$endif$ $if(keywords)$
+      <meta name="keywords" content="$keywords$" />$endif$ $body$
     </main>
     <footer>
       <div class="lhs">© 2026 Jonas Haukenes</div>

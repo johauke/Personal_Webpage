@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SpiderMonkey JavaScript tutorial - Internet Checkpoint</title>
+    <link rel="stylesheet" href="../../css/default.css" />
+    <link rel="stylesheet" href="../../css/syntax.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../../">My Internet Checkpoint</a>
+      </div>
+
+      <nav>
+        <a href="../../projects/">Projects</a>
+        <a href="../../posts/">Blog</a>
+        <a href="../../about/">About Me</a>
+      </nav>
+    </header>
+
+    <main role="main">
+      <h1>SpiderMonkey JavaScript tutorial</h1>
+      
+      <meta name="author" content="Jonas Haukenes" />  <article>
+  <section class="header">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffd479">
+      <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"></path>
+    </svg>
+    January 17, 2025
+  </section>
+  <section class="time">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -1000 960 870" width="20px" fill="#ffd479">
+      <path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"></path>
+    </svg>
+    1 min read
+  </section>
+  <section class="info">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -1000 900 800" width="20px" fill="#ffd479">
+      <path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"></path>
+    </svg>
+     <a title="All pages tagged 'JavaScript'." href="../../tags/JavaScript/" rel="tag">JavaScript</a>, <a title="All pages tagged 'SpiderMonkey'." href="../../tags/SpiderMonkey/" rel="tag">SpiderMonkey</a>, <a title="All pages tagged 'C++'." href="../../tags/C%2B%2B/" rel="tag">C++</a> 
+  </section>
+  <section><p>Fusce tortor quam, egestas in posuere quis, porttitor vel turpis. Donec
+vulputate porttitor augue at rhoncus. Proin iaculis consectetur sagittis.
+Curabitur venenatis turpis sit amet purus tristique nec posuere risus laoreet.
+Nullam nisi sem, dapibus id semper id, egestas vel arcu. Morbi porttitor ipsum
+placerat erat consequat sed consequat purus feugiat. Donec auctor elit ut risus
+mattis facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Proin vulputate sapien facilisis leo ornare pulvinar. Fusce tempus massa a risus
+semper iaculis. Suspendisse sollicitudin posuere nunc, sit amet rutrum leo
+facilisis mattis. Sed ornare auctor dui, vitae rutrum neque auctor sit amet.
+Proin ac dui magna. Mauris vehicula interdum augue, nec ultrices libero egestas
+quis. Nunc convallis euismod ipsum, id sollicitudin orci consequat ac. Fusce
+bibendum congue libero, in rutrum nulla congue non. Cras sit amet risus tortor,
+eu pellentesque dui. Phasellus euismod enim non nibh sodales quis consectetur
+lorem laoreet. Vivamus a egestas quam. Curabitur in tortor augue, vitae varius
+tellus. Integer varius, elit ac gravida suscipit, eros erat pellentesque nisi,
+et tristique augue odio id nulla. Aliquam sit amet nunc vel tellus hendrerit
+tempus ac vel sem.</p>
+<p>Aenean tincidunt sollicitudin sapien ut porttitor. Curabitur molestie adipiscing
+lorem vel scelerisque. Donec vitae interdum est. Proin rutrum vulputate
+faucibus. Suspendisse sit amet felis odio, non volutpat ante. Sed eu lectus
+quam. Curabitur tristique rhoncus est, vel commodo tortor suscipit semper.
+Maecenas feugiat vestibulum nisi id facilisis. Nulla non tincidunt libero.
+Praesent ultrices interdum commodo. Sed euismod nisl auctor leo ultrices rutrum.
+Aliquam nibh felis, congue molestie blandit at, bibendum at eros. Aenean
+tincidunt, tortor iaculis placerat sollicitudin, lorem justo tempor diam, et
+posuere sapien leo et magna. Quisque vel aliquam mauris.</p>
+<p>Proin varius tempus fermentum. Cum sociis natoque penatibus et magnis dis
+parturient montes, nascetur ridiculus mus. Sed tincidunt nunc id magna
+adipiscing non sollicitudin turpis tempor. Etiam vel elit ipsum, quis euismod
+velit. Quisque elementum magna vitae quam venenatis lacinia. Sed at arcu ipsum.
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+himenaeos. Donec ut lorem ac sapien cursus lacinia sit amet mollis dolor.
+Vivamus tempus odio nec magna faucibus sed hendrerit lorem tempor.</p>
+<p>Vestibulum eu nisi arcu. Curabitur nisi risus, fermentum ut lacinia ut, interdum
+nec magna. Nunc aliquet gravida massa, eu aliquam lorem faucibus at. Sed
+sollicitudin volutpat velit id tempor. In nibh justo, pharetra et pretium
+dignissim, tempus in turpis. Phasellus eget lobortis nisl. Phasellus sed
+fermentum diam. Nam tempus pharetra odio, quis congue eros imperdiet eu. Aliquam
+dui eros, hendrerit et vulputate vel, porta eu eros. Nullam nisi dui, commodo
+eget pharetra ut, ornare sit amet nunc. Fusce vel neque urna. Maecenas nulla
+ante, egestas at consequat quis, fermentum a enim. Aliquam id tristique urna.
+Integer augue justo, scelerisque et consectetur id, rhoncus eget enim.</p></section>
+</article>
+
+    </main>
+
+    <footer>
+        <div class="lhs">
+            λ Generated by <a href="http://jaspervdj.be/hakyll">Hakyll</a></br>
+            © 2026 Jonas Haukenes
+        </div>
+        <div class="rhs">
+            <button id="theme-toggle" aria-label="Toggle theme">
+            <span class="toggle-label">LIGHT</span>
+            <span class="toggle-track">
+                <span class="toggle-knob"></span>
+            </span>
+            <span class="toggle-label">DARK</span>
+            </button>
+        </div>
+    </footer>
+  </body>
+<script>
+  (function () {
+    const root = document.documentElement;
+    const toggle = document.getElementById("theme-toggle");
+
+    // Load saved theme or system preference
+    const saved = localStorage.getItem("theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (saved) {
+      root.setAttribute("data-theme", saved);
+    } else {
+      root.setAttribute("data-theme", systemDark ? "dark" : "light");
+    }
+
+    // Toggle handler
+    toggle.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  })();
+</script>
+
+</html>
