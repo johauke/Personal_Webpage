@@ -20,21 +20,35 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Cabal
       uses: haskell-actions/setup@v2
       with:
           ghc-version: '9.6.7'
           cabal-vesrion: '3.12.1.0'
-    - name: Build
-      run: |
-        cabal build
+
+    - name: Cache ~/.cabal/packages and ~/.cabal/store
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cabal/packages
+          ~/.cabal/store
+        key: ${{ runner.os }}-${{ hashFiles('**/*.cabal', '**/cabal.project', '**/cabal.project.freeze') }}
+
+    - name: Build Project
+      run:
+        cabal build all --only-dependencies
+    - name: Build Site
+      run:
         cabal exec site rebuild
+
     - name: Configure pages
       uses: actions/configure-pages@v5.0.0
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v4.0.0
       with:
         path: docs
+
   deploy:
       
     environment:
