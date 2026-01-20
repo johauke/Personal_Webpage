@@ -37,7 +37,7 @@ jobs:
 
     - name: Build Project
       run:
-        cabal build all --only-dependencies
+        cabal build
     - name: Build Site
       run:
         cabal exec site rebuild
