@@ -10,7 +10,7 @@ import Slug (toSlug)
 import System.FilePath (takeBaseName, takeDirectory, (</>))
 import Text.HTML.TagSoup (Tag (..))
 import Text.Pandoc.Highlighting (Style, haddock, styleToCss)
-import Text.Pandoc.Options (HighlightMethod (Skylighting), WriterOptions (..))
+import Text.Pandoc.Options (HighlightMethod (Skylighting), WriterOptions (..), ReaderOptions (readerExtensions), githubMarkdownExtensions)
 
 --------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ main = hakyllWith config $ do
         compile $ do
             makeItem $ styleToCss pandocCodeStyle
 
-    match "personal/me.md" $ do
+    match "personal/about.md" $ do
         route $ customRoute $ const "about/index.html"
         compile $
             pandocCompiler
@@ -119,16 +119,13 @@ main = hakyllWith config $ do
     create ["sitemap.xml"] $ do
         route idRoute
         compile $ do
-            -- load and sort the post
             posts <- recentFirst =<< loadAll "posts/*"
+            projects <- recentFirst =<< loadAll "projects/*"
 
             -- load individiual pages from a list (globs DO NOT work here)
-            singlePages <- loadAll (fromList ["about.rst", "contact.markdown"])
+            singlePages <- loadAll (fromList ["personal/about.md"])
 
-            -- mapped the posts and singlePages together
-            let pages = posts <> singlePages
-                -- create the `pages` field with the postCtx
-                -- and return the `pages` value for it
+            let pages = posts <> projects <> singlePages
                 sitemapCtx =
                     constField "root" root
                         <> listField "pages" postCtx (return pages)
@@ -173,12 +170,6 @@ makeTagPage tags typ = tagsRules tags $ \tag pattern -> do
             >>= cleanIndexHtmls
             >>= cleanIndexUrls
 
-type FeedRenderer =
-    FeedConfiguration ->
-    Context String ->
-    [Item String] ->
-    Compiler (Item String)
-
 postCtx :: Context String
 postCtx =
     constField "root" root
@@ -212,6 +203,11 @@ config =
 root :: String
 root = "https://internetcheckpoint.com"
 
+type FeedRenderer =
+    FeedConfiguration ->
+    Context String ->
+    [Item String] ->
+    Compiler (Item String)
 feedConfiguration :: FeedConfiguration
 feedConfiguration =
     FeedConfiguration
@@ -261,6 +257,8 @@ pandocCompiler' :: Compiler (Item String)
 pandocCompiler' =
     pandocCompilerWith
         defaultHakyllReaderOptions
+            { readerExtensions = githubMarkdownExtensions 
+            }
         defaultHakyllWriterOptions
             { writerHighlightMethod = Skylighting pandocCodeStyle
             }
