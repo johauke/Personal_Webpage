@@ -10,7 +10,7 @@ import Slug (toSlug)
 import System.FilePath (takeBaseName, takeDirectory, (</>))
 import Text.HTML.TagSoup (Tag (..))
 import Text.Pandoc.Highlighting (Style, haddock, styleToCss)
-import Text.Pandoc.Options (HighlightMethod (Skylighting), WriterOptions (..), ReaderOptions (readerExtensions), githubMarkdownExtensions)
+import Text.Pandoc.Options (HighlightMethod (Skylighting), ReaderOptions (readerExtensions), WriterOptions (..), githubMarkdownExtensions)
 
 --------------------------------------------------------------------------------
 
@@ -132,8 +132,10 @@ main = hakyllWith config $ do
 
             makeItem ("" :: String)
                 >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
+                >>= cleanIndexHtmls
+                >>= cleanIndexUrls
 
-    create ["rss.xml"] $ do
+    create ["feed.rss"] $ do
         route idRoute
         compile (feedCompiler renderRss)
 
@@ -201,25 +203,26 @@ config =
         }
 
 root :: String
-root = "https://internetcheckpoint.com"
+root = "https://haukenes.me"
+
+feedConfiguration :: FeedConfiguration
+feedConfiguration =
+    FeedConfiguration
+        { feedTitle = "Haukenes.me"
+        , feedDescription = "Posts about my interrests and other things I have worked on."
+        , feedAuthorName = "Jonas Haukenes"
+        , feedAuthorEmail = ""
+        , feedRoot = "https://haukenes.me"
+        }
+
+feedCtx :: Context String
+feedCtx = postCtx <> bodyField "Description"
 
 type FeedRenderer =
     FeedConfiguration ->
     Context String ->
     [Item String] ->
     Compiler (Item String)
-feedConfiguration :: FeedConfiguration
-feedConfiguration =
-    FeedConfiguration
-        { feedTitle = "My Internet Checkpoint"
-        , feedDescription = "Posts about my interrests and other things I have worked on."
-        , feedAuthorName = "Jonas Haukenes"
-        , feedAuthorEmail = ""
-        , feedRoot = "https://internetcheckpoint.com"
-        }
-
-feedCtx :: Context String
-feedCtx = postCtx <> bodyField "Description"
 
 feedCompiler :: FeedRenderer -> Compiler (Item String)
 feedCompiler renderer =
@@ -257,7 +260,7 @@ pandocCompiler' :: Compiler (Item String)
 pandocCompiler' =
     pandocCompilerWith
         defaultHakyllReaderOptions
-            { readerExtensions = githubMarkdownExtensions 
+            { readerExtensions = githubMarkdownExtensions
             }
         defaultHakyllWriterOptions
             { writerHighlightMethod = Skylighting pandocCodeStyle

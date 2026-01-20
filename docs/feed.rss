@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
-        <title>My Internet Checkpoint</title>
-        <link>https://internetcheckpoint.com</link>
+        <title>Haukenes.me</title>
+        <link>https://haukenes.me</link>
         <description><![CDATA[Posts about my interrests and other things I have worked on.]]></description>
-        <atom:link href="https://internetcheckpoint.com/rss.xml" rel="self"
+        <atom:link href="https://haukenes.me/feed.rss" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Sun, 19 Jan 2025 00:00:00 UT</lastBuildDate>
         <item>
     <title>Hello world</title>
-    <link>https://internetcheckpoint.com/posts/hello-world/index.html</link>
+    <link>https://haukenes.me/posts/hello-world/index.html</link>
     <description><![CDATA[A short post talking about the motivation behind this page and some of my plans for it.]]></description>
     <pubDate>Sun, 19 Jan 2025 00:00:00 UT</pubDate>
-    <guid>https://internetcheckpoint.com/posts/hello-world/index.html</guid>
+    <guid>https://haukenes.me/posts/hello-world/index.html</guid>
     <dc:creator>Jonas Haukenes</dc:creator>
 </item>
 
